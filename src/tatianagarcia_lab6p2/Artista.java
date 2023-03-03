@@ -41,6 +41,17 @@ public class Artista extends Usuarios{
         return albumes;
     }
 
+    @Override
+    public int getEdad() {
+        return edad;
+    }
+
+    @Override
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    
+
     public void setAlbumes(ArrayList<Album> albumes) {
         this.albumes = albumes;
     }

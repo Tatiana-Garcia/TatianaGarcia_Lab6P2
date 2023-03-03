@@ -11,12 +11,12 @@ package tatianagarcia_lab6p2;
 public class Canciones {
     private String titulo; 
     private String duracion; 
-    private Album referencia;//referencia al album que pertence
+    private int referencia;//referencia al album que pertenece-> id del lanzamiento
 
     public Canciones() {
     }
 
-    public Canciones(String titulo, String duracion, Album referencia) {
+    public Canciones(String titulo, String duracion, int referencia) {
         this.titulo = titulo;
         this.duracion = duracion;
         this.referencia = referencia;
@@ -38,11 +38,11 @@ public class Canciones {
         this.duracion = duracion;
     }
 
-    public Album getReferencia() {
+    public int getReferencia() {
         return referencia;
     }
 
-    public void setReferencia(Album referencia) {
+    public void setReferencia(int referencia) {
         this.referencia = referencia;
     }
 

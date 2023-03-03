@@ -5,13 +5,13 @@ import java.util.Date;
 
 public class Lanzamiento {
     protected String titulo; 
-    protected Date fecha;
+    protected String fecha;
     protected int con_like; 
 
     public Lanzamiento() {
     }
 
-    public Lanzamiento(String titulo, Date fecha, int con_like) {
+    public Lanzamiento(String titulo, String fecha, int con_like) {
         this.titulo = titulo;
         this.fecha = fecha;
         this.con_like = con_like;
@@ -25,11 +25,11 @@ public class Lanzamiento {
         this.titulo = titulo;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
