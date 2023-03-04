@@ -251,18 +251,20 @@ public class Main extends javax.swing.JFrame {
                     if (nom.endsWith(user)) {
                         valid =false;
                     }
-                    
                 }
                 
                 if (valid ==true) {
                     if (s.equals("Artista")) {
                         if (Integer.parseInt(jt_newage.getText())>18) {
                             String nombre = JOptionPane.showInputDialog("Ingresar nombre de artista: ");
+                            admBitacora ab = new admBitacora("./bitacora.txt", jt_newuser.getText(), "Artista");
+                            ab.escribirArchivo();
 
                             //ap.cargarArchivo();
                             Artista a = new Artista(nombre, jt_newuser.getText(),jt_newpass.getText(), Integer.parseInt(jt_newage.getText()));
                             ap.getListaUsuarios().add(a);
                             ap.escribirArchivo();
+                            
                             jt_newuser.setText("");
                             jt_newpass.setText("");
                             jt_newage.setText("");
@@ -271,13 +273,14 @@ public class Main extends javax.swing.JFrame {
                         }
                     }else{
                         if (Integer.parseInt(jt_newage.getText())>12) {
-
-
+                            admBitacora ab = new admBitacora("./bitacora.txt", jt_newuser.getText(), "Oyente");
+                            ab.escribirArchivo();
                             //ap.cargarArchivo();
                             Oyentes o = new Oyentes(jt_newuser.getText(),
                                     jt_newpass.getText(), Integer.parseInt(jt_newage.getText()));
                             ap.getListaUsuarios().add(o);
                             ap.escribirArchivo();
+                            
                             jt_newuser.setText("");
                             jt_newpass.setText("");
                             jt_newage.setText("");
