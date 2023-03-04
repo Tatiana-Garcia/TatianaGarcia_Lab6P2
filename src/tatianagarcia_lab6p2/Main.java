@@ -46,6 +46,13 @@ public class Main extends javax.swing.JFrame {
         cb_usertype = new javax.swing.JComboBox<>();
         jb_crearcuenta = new javax.swing.JButton();
         jd_crearlanzamiento = new javax.swing.JDialog();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jButton7 = new javax.swing.JButton();
         jd_cliente = new javax.swing.JDialog();
         jf_artista = new javax.swing.JFrame();
         jPanel3 = new javax.swing.JPanel();
@@ -176,15 +183,62 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLabel10.setText("Titulo de publicacion");
+
+        jLabel11.setText("Fecha de lanzamiento:");
+
+        jLabel12.setText("Conteo de likes:");
+
+        jButton7.setText("jButton7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jd_crearlanzamientoLayout = new javax.swing.GroupLayout(jd_crearlanzamiento.getContentPane());
         jd_crearlanzamiento.getContentPane().setLayout(jd_crearlanzamientoLayout);
         jd_crearlanzamientoLayout.setHorizontalGroup(
             jd_crearlanzamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addGroup(jd_crearlanzamientoLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jd_crearlanzamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jd_crearlanzamientoLayout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField3))
+                    .addGroup(jd_crearlanzamientoLayout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_crearlanzamientoLayout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(299, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_crearlanzamientoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(69, 69, 69))
         );
         jd_crearlanzamientoLayout.setVerticalGroup(
             jd_crearlanzamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 425, Short.MAX_VALUE)
+            .addGroup(jd_crearlanzamientoLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addGroup(jd_crearlanzamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jd_crearlanzamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(jd_crearlanzamientoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(61, 61, 61))
         );
 
         javax.swing.GroupLayout jd_clienteLayout = new javax.swing.GroupLayout(jd_cliente.getContentPane());
@@ -590,6 +644,27 @@ public class Main extends javax.swing.JFrame {
         opencrearlanzamiento();
     }//GEN-LAST:event_jb_crearActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try {
+            
+            if (!"".equals(jTextField1.getText())
+                    &&!"".equals(jTextField1.getText())
+                    &&!"".equals(jTextField1.getText())) {
+                
+                admUsers ap=
+                                new admUsers("./usuarios.txt");
+                ap.cargarArchivo();
+                
+                    
+            }else{
+                JOptionPane.showMessageDialog(null, "Llenar todos los campos");
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudieron agregar los datos correctamente");
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     private void openartistaframe (){
         this.dispose();
         jf_artista.pack();//para que la ventana se abra correctamente
@@ -666,7 +741,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -683,6 +762,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree2;
     private javax.swing.JButton jb_crear;
