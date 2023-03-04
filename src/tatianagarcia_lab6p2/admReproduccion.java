@@ -51,7 +51,16 @@ public class admReproduccion {
                 
                 bw.write(t.getNombre()+"|");
                 bw.write(t.getCont()+"|");
-                //bw.write(t.getEdad()+"|");
+                for (int i = 0; i < t.getCanciones().size(); i++) {
+                    Canciones a = t.getCanciones().get(i);
+                    
+                    if (i==t.getCanciones().size()-1) {
+                        bw.write(a.getTitulo()+","+a.getDuracion()+","+a.getReferencia());
+                    }else{
+                        bw.write(a.getTitulo()+","+a.getDuracion()+","+a.getReferencia()+",");
+                    }
+                }
+                bw.write("|");
 
             }
             bw.newLine();
@@ -64,7 +73,7 @@ public class admReproduccion {
 
     public void cargarArchivo() {
         Scanner sc = null;
-        //int con =0;
+        int con =0;
         listaReproduccion = new ArrayList();
         if (archivo.exists()) {
             try {
@@ -74,7 +83,12 @@ public class admReproduccion {
                 while (sc.hasNextLine()) {
                     String[]x=sc.nextLine().split("\\|");
                         listaReproduccion.add(new Reproduccion(x[0],Integer.parseInt(x[1])) );
-                    
+                    String canciones[]=x[2].split(",");
+                    for (int i = 0; i < canciones.length-2; i+=3) {
+                        listaReproduccion.get(con).getCanciones().add(new Canciones(
+                                canciones[i],canciones[i+1], Integer.parseInt(canciones[i+2])));
+                    }
+                    con++;
                 }
             } catch (Exception ex) {
             }

@@ -43,7 +43,7 @@ public class Lanzamiento {
 
     @Override
     public String toString() {
-        return "Lanzamiento{" + "titulo=" + titulo + ", fecha=" + fecha + ", con_like=" + con_like + '}';
+        return titulo + "," + fecha + "," + con_like ;
     }
     
     

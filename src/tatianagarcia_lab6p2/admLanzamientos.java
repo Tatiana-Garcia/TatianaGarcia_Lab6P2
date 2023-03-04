@@ -57,11 +57,14 @@ public class admLanzamientos {
                 if (t instanceof Album) {
                     bw.write("Album|");
                     bw.write(((Album) t).getCant_canciones()+"|");
+                    bw.write(((Album) t).getCanciones()+"|");
                 }else if(t instanceof Single){
                     bw.write("Single|");
                     bw.write(((Single) t).getCancion().getTitulo()+",");
                     bw.write(((Single) t).getCancion().getDuracion()+",");
                     bw.write(((Single) t).getCancion().getReferencia()+"|");
+                    
+                    
                     //bw.write(((Artista) t).getNombre()+"|");
                 }
                 bw.write(t.getTitulo()+"|");
@@ -90,13 +93,21 @@ public class admLanzamientos {
                     String[]x=sc.nextLine().split("\\|");
                     if (x[0].equals("Album")) {
                         
-                        listaLanzamientos.add(new Album(Integer.parseInt(x[1]), x[2], x[3], Integer.parseInt(x[4])));
+                        listaLanzamientos.add(new Album(Integer.parseInt(x[1]), x[3], x[4], Integer.parseInt(x[5])));
+                        //
+                        String canciones[]=x[2].split(".");
+                        for (int i = 0; i < canciones.length-2; i+=3) {
+                            ((Album)listaLanzamientos.get(con)).getCanciones().add(new Canciones(
+                                canciones[i],canciones[i+1], Integer.parseInt(canciones[i+2])));
+                        }
+                        //
                     }else{
                         //String accesorio[]=x[3].split(",");
                         String []single= x[1].split(",");
                         Canciones t = new Canciones(single[0], single[1], Integer.parseInt(single[2]));
                         listaLanzamientos.add(new Single(t, x[2], x[3], Integer.parseInt(x[4])));
                     }
+                    con++;
                 }
             } catch (Exception ex) {
             }
