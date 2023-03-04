@@ -4,6 +4,7 @@
  */
 package tatianagarcia_lab6p2;
 
+import java.awt.Color;
 import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -14,6 +15,7 @@ import javax.swing.JTextField;
  * @author tatig
  */
 public class Main extends javax.swing.JFrame {
+    String usuarioingresado ="";
 
     /**
      * Creates new form Main
@@ -50,6 +52,7 @@ public class Main extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jt_pass = new javax.swing.JTextField();
         jl_createaccount = new javax.swing.JLabel();
+        jb_login = new javax.swing.JButton();
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -173,6 +176,19 @@ public class Main extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jl_createaccountMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jl_createaccountMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jl_createaccountMouseExited(evt);
+            }
+        });
+
+        jb_login.setText("Ingrese");
+        jb_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_loginActionPerformed(evt);
+            }
         });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -197,6 +213,10 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jt_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(136, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jb_login)
+                .addGap(35, 35, 35))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -213,7 +233,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jt_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(63, 63, 63)
                 .addComponent(jl_createaccount)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jb_login)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -235,6 +257,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_createaccountMouseClicked
 
     private void jb_crearcuentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearcuentaMouseClicked
+        jl_createaccount.setForeground(Color.white);
         try {
             
             if (!"".equals(jt_newuser.getText())
@@ -248,7 +271,7 @@ public class Main extends javax.swing.JFrame {
                 for (int i = 0; i < ap.getListaUsuarios().size(); i++) {
                     String nom = ap.getListaUsuarios().get(i).getUser();
                     String user = jt_newuser.getText();
-                    if (nom.endsWith(user)) {
+                    if (nom.equals(user)) {
                         valid =false;
                     }
                 }
@@ -301,6 +324,65 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_crearcuentaMouseClicked
 
+    private void jl_createaccountMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_createaccountMouseEntered
+        jl_createaccount.setForeground(Color.blue);
+    }//GEN-LAST:event_jl_createaccountMouseEntered
+
+    private void jl_createaccountMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jl_createaccountMouseExited
+        jl_createaccount.setForeground(Color.white);
+    }//GEN-LAST:event_jl_createaccountMouseExited
+
+    private void jb_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_loginActionPerformed
+        admUsers au=
+                                new admUsers("./usuarios.txt");
+        au.cargarArchivo();
+        boolean valid = false; 
+        for (Usuarios u : au.getListaUsuarios()) {
+            
+            if (u instanceof Artista) {
+                String nom = u.getUser();
+                String user = jt_user.getText();
+            
+                String pass = u.getPassword();
+                String password = jt_pass.getText();
+
+                if (nom.equals(user)&&pass.equals(password)) {
+                    valid =true;
+                }
+            }
+            if (u instanceof Oyentes) {
+                String nom = u.getUser();
+                String user = jt_user.getText();
+            
+                String pass = u.getPassword();
+                String password = jt_pass.getText();
+
+                if (nom.equals(user)&&pass.equals(password)) {
+                    valid =true;
+                }
+            }
+        }
+//        for (int i = 0; i < au.getListaUsuarios().size(); i++) {
+//            
+//            String nom = au.getListaUsuarios().get(i).getUser();
+//            String user = jt_user.getText();
+//            
+//            String pass = au.getListaUsuarios().get(i).getPassword();
+//            String password = jt_pass.getText();
+//            
+//            if (nom.equals(user)&&pass.equals(password)) {
+//                valid =true;
+//            }
+//        }
+        if (valid==true) {
+            usuarioingresado = jt_user.getText();
+            jt_user.setText("");
+            jt_pass.setText("");
+        }else{
+            JOptionPane.showMessageDialog(this, "La contraseña o usuario son incorrectos");
+        }
+    }//GEN-LAST:event_jb_loginActionPerformed
+
     private void opennewaccount (){
         jd_CrearUsuario.pack();//para que la ventana se abra correctamente
         jd_CrearUsuario.setLocationRelativeTo(this);
@@ -341,6 +423,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_usertype;
@@ -354,6 +437,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton jb_crearcuenta;
+    private javax.swing.JButton jb_login;
     private javax.swing.JDialog jd_CrearUsuario;
     private javax.swing.JLabel jl_createaccount;
     private javax.swing.JTextField jt_newage;
