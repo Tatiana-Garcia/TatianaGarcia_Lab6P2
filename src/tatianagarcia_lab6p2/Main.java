@@ -45,6 +45,29 @@ public class Main extends javax.swing.JFrame {
         jt_newage = new javax.swing.JTextField();
         cb_usertype = new javax.swing.JComboBox<>();
         jb_crearcuenta = new javax.swing.JButton();
+        jd_artista = new javax.swing.JDialog();
+        jd_cliente = new javax.swing.JDialog();
+        jf_artista = new javax.swing.JFrame();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jf_cliente = new javax.swing.JFrame();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jb_crear = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jb_eliminar = new javax.swing.JButton();
+        jb_editar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -151,6 +174,189 @@ public class Main extends javax.swing.JFrame {
         jd_CrearUsuarioLayout.setVerticalGroup(
             jd_CrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_artistaLayout = new javax.swing.GroupLayout(jd_artista.getContentPane());
+        jd_artista.getContentPane().setLayout(jd_artistaLayout);
+        jd_artistaLayout.setHorizontalGroup(
+            jd_artistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_artistaLayout.setVerticalGroup(
+            jd_artistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_clienteLayout = new javax.swing.GroupLayout(jd_cliente.getContentPane());
+        jd_cliente.getContentPane().setLayout(jd_clienteLayout);
+        jd_clienteLayout.setHorizontalGroup(
+            jd_clienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_clienteLayout.setVerticalGroup(
+            jd_clienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+
+        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane3.setViewportView(jList2);
+
+        jLabel9.setFont(new java.awt.Font("Arial Black", 0, 11)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("CRUD Listas de Reproduccion");
+
+        jButton1.setText("Crear");
+
+        jButton2.setText("Editar");
+
+        jButton3.setText("Eliminar");
+
+        jButton4.setText("Ver Listas creadas");
+
+        jButton5.setText("Dar like");
+
+        jButton6.setText("Guardar listas");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(159, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton3)
+                        .addGap(62, 62, 62)
+                        .addComponent(jButton4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton5))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton6)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jf_artistaLayout = new javax.swing.GroupLayout(jf_artista.getContentPane());
+        jf_artista.getContentPane().setLayout(jf_artistaLayout);
+        jf_artistaLayout.setHorizontalGroup(
+            jf_artistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jf_artistaLayout.setVerticalGroup(
+            jf_artistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
+
+        jScrollPane1.setViewportView(jTree1);
+
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(jList1);
+
+        jb_crear.setText("Crear");
+        jb_crear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_crearActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Lanzamiento");
+
+        jb_eliminar.setText("Eliminar");
+
+        jb_editar.setText("Editar");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(56, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jb_eliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_crear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_editar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(66, 66, 66))))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(76, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addComponent(jb_crear)
+                .addGap(74, 74, 74)
+                .addComponent(jb_eliminar)
+                .addGap(96, 96, 96)
+                .addComponent(jb_editar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jf_clienteLayout = new javax.swing.GroupLayout(jf_cliente.getContentPane());
+        jf_cliente.getContentPane().setLayout(jf_clienteLayout);
+        jf_clienteLayout.setHorizontalGroup(
+            jf_clienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jf_clienteLayout.setVerticalGroup(
+            jf_clienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -337,6 +543,7 @@ public class Main extends javax.swing.JFrame {
                                 new admUsers("./usuarios.txt");
         au.cargarArchivo();
         boolean valid = false; 
+        int tipo = 0;
         for (Usuarios u : au.getListaUsuarios()) {
             
             if (u instanceof Artista) {
@@ -348,6 +555,7 @@ public class Main extends javax.swing.JFrame {
 
                 if (nom.equals(user)&&pass.equals(password)) {
                     valid =true;
+                    tipo =1;
                 }
             }
             if (u instanceof Oyentes) {
@@ -359,30 +567,57 @@ public class Main extends javax.swing.JFrame {
 
                 if (nom.equals(user)&&pass.equals(password)) {
                     valid =true;
+                    tipo =2;
                 }
             }
         }
-//        for (int i = 0; i < au.getListaUsuarios().size(); i++) {
-//            
-//            String nom = au.getListaUsuarios().get(i).getUser();
-//            String user = jt_user.getText();
-//            
-//            String pass = au.getListaUsuarios().get(i).getPassword();
-//            String password = jt_pass.getText();
-//            
-//            if (nom.equals(user)&&pass.equals(password)) {
-//                valid =true;
-//            }
-//        }
         if (valid==true) {
             usuarioingresado = jt_user.getText();
             jt_user.setText("");
             jt_pass.setText("");
+            if (tipo==1) {
+                //Artistas
+                openartistaframe();
+            }
+            if (tipo==2) {
+                //Oyentes
+                openclienteframe();
+            }
         }else{
             JOptionPane.showMessageDialog(this, "La contraseña o usuario son incorrectos");
         }
     }//GEN-LAST:event_jb_loginActionPerformed
 
+    private void jb_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_crearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_crearActionPerformed
+
+    private void openartistaframe (){
+        this.dispose();
+        jf_artista.pack();//para que la ventana se abra correctamente
+        jf_artista.setLocationRelativeTo(this);
+        jf_artista.setExtendedState(MAXIMIZED_BOTH);
+        jf_artista.setVisible(true);
+    }
+    private void openclienteframe (){
+        this.dispose();
+        jf_cliente.pack();//para que la ventana se abra correctamente
+        jf_cliente.setLocationRelativeTo(this);
+        jf_cliente.setExtendedState(MAXIMIZED_BOTH);
+        jf_cliente.setVisible(true);
+    }
+    private void openartista (){
+        jd_artista.pack();//para que la ventana se abra correctamente
+        jd_artista.setLocationRelativeTo(this);
+        jd_artista.setModal(true);//hacer prioridad la ventana
+        jd_artista.setVisible(true);
+    }
+    private void opencliente (){
+        jd_cliente.pack();//para que la ventana se abra correctamente
+        jd_cliente.setLocationRelativeTo(this);
+        jd_cliente.setModal(true);//hacer prioridad la ventana
+        jd_cliente.setVisible(true);
+    }
     private void opennewaccount (){
         jd_CrearUsuario.pack();//para que la ventana se abra correctamente
         jd_CrearUsuario.setLocationRelativeTo(this);
@@ -427,6 +662,12 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_usertype;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -434,11 +675,28 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTree jTree1;
+    private javax.swing.JButton jb_crear;
     private javax.swing.JButton jb_crearcuenta;
+    private javax.swing.JButton jb_editar;
+    private javax.swing.JButton jb_eliminar;
     private javax.swing.JButton jb_login;
     private javax.swing.JDialog jd_CrearUsuario;
+    private javax.swing.JDialog jd_artista;
+    private javax.swing.JDialog jd_cliente;
+    private javax.swing.JFrame jf_artista;
+    private javax.swing.JFrame jf_cliente;
     private javax.swing.JLabel jl_createaccount;
     private javax.swing.JTextField jt_newage;
     private javax.swing.JTextField jt_newpass;
