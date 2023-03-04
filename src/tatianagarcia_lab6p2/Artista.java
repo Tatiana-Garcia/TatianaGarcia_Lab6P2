@@ -2,6 +2,7 @@
 package tatianagarcia_lab6p2;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -48,7 +49,13 @@ public class Artista extends Usuarios{
 
     @Override
     public void setEdad(int edad) {
-        this.edad = edad;
+        if (edad>18) {
+            this.edad = edad;
+        }else{
+            JOptionPane.showMessageDialog(null, "Edad no valida");
+        }
+        
+        
     }
     
 

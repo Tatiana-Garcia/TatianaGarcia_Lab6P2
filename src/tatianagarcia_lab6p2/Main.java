@@ -240,16 +240,55 @@ public class Main extends javax.swing.JFrame {
             if (!"".equals(jt_newuser.getText())
                     &&!"".equals(jt_newpass.getText())
                     &&!"".equals(jt_newage.getText())) {
+                Object s = cb_usertype.getSelectedItem();//to String?
+                admUsers ap=
+                                new admUsers("./usuarios.txt");
+                ap.cargarArchivo();
+                boolean valid = true; 
+                for (int i = 0; i < ap.getListaUsuarios().size(); i++) {
+                    String nom = ap.getListaUsuarios().get(i).getUser();
+                    String user = jt_newuser.getText();
+                    if (nom.endsWith(user)) {
+                        valid =false;
+                    }
+                    
+                }
                 
-//                users.add(new Alumno(new JFormattedTextField(jft_cuenta.getText()), 
-//                        new JTextField(jt_nombre.getText()), new JTextField(jt_carrera.getText()), 
-//                        new JTextField(jt_rol.getText()), new JTextField(jt_user.getText()), 
-//                        new JPasswordField(jpf_pass.getText())));
-                
-                
-                jt_newuser.setText("");
-                jt_newpass.setText("");
-                jt_newage.setText("");
+                if (valid ==true) {
+                    if (s.equals("Artista")) {
+                        if (Integer.parseInt(jt_newage.getText())>18) {
+                            String nombre = JOptionPane.showInputDialog("Ingresar nombre de artista: ");
+
+                            //ap.cargarArchivo();
+                            Artista a = new Artista(nombre, jt_newuser.getText(),jt_newpass.getText(), Integer.parseInt(jt_newage.getText()));
+                            ap.getListaUsuarios().add(a);
+                            ap.escribirArchivo();
+                            jt_newuser.setText("");
+                            jt_newpass.setText("");
+                            jt_newage.setText("");
+                        }else{
+                            JOptionPane.showMessageDialog(this, "Edad no valida");
+                        }
+                    }else{
+                        if (Integer.parseInt(jt_newage.getText())>12) {
+
+
+                            //ap.cargarArchivo();
+                            Oyentes o = new Oyentes(jt_newuser.getText(),
+                                    jt_newpass.getText(), Integer.parseInt(jt_newage.getText()));
+                            ap.getListaUsuarios().add(o);
+                            ap.escribirArchivo();
+                            jt_newuser.setText("");
+                            jt_newpass.setText("");
+                            jt_newage.setText("");
+                        }else{
+                            JOptionPane.showMessageDialog(this, "Edad no valida");
+                        }
+                    }
+                }else {
+                    JOptionPane.showMessageDialog(this, "Usuario ya existente, cambiar nombre de usuario");
+                }
+                    
             }else{
                 JOptionPane.showMessageDialog(null, "Llenar todos los campos");
             }

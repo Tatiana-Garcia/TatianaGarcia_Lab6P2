@@ -2,6 +2,7 @@
 package tatianagarcia_lab6p2;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Oyentes extends Usuarios{
     private ArrayList<Canciones>canciones = new ArrayList();//Lista de canciones favoritas
@@ -39,6 +40,21 @@ public class Oyentes extends Usuarios{
     public void setLike_reproduccion(ArrayList<Reproduccion> like_reproduccion) {
         this.like_reproduccion = like_reproduccion;
     }
+
+    @Override
+    public int getEdad() {
+        return edad;
+    }
+
+    @Override
+    public void setEdad(int edad) {
+        if (edad>12) {
+            this.edad = edad;
+        }else{
+            JOptionPane.showMessageDialog(null, "Edad no valida");
+        }
+    }
+    
 
     @Override
     public String toString() {
